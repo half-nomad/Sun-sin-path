@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="이순신 장군 관련 전국 여행지 소개">
+    <title>여행지 - 순신의 길</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html">순신의 길</a>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html">홈</a></li>
+                <li><a href="timeline.html">연표</a></li>
+                <li><a href="destinations.html" class="active">여행지</a></li>
+                <li><a href="courses.html">추천코스</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>이순신 관련 여행지</h1>
+            <p>전국의 이순신 장군 유적지와 기념관을 만나보세요</p>
+        </div>
+    </section>
+
+    <!-- Destinations Grid -->
+    <section class="destinations-section">
+        <div class="container">
+            <div id="destinations-grid">
+                <!-- Destinations will be loaded here from Notion -->
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/notion-api.js"></script>
+</body>
+</html>

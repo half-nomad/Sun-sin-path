@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="이순신 장군의 생애와 주요 전투 연표">
+    <title>연표 - 순신의 길</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html">순신의 길</a>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html">홈</a></li>
+                <li><a href="timeline.html" class="active">연표</a></li>
+                <li><a href="destinations.html">여행지</a></li>
+                <li><a href="courses.html">추천코스</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>이순신 장군 연표</h1>
+            <p>1545년부터 1598년까지의 생애와 업적</p>
+        </div>
+    </section>
+
+    <!-- Timeline Content -->
+    <section class="timeline-section">
+        <div class="container">
+            <div id="timeline-container">
+                <!-- Timeline will be loaded here from Notion -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 순신의 길. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/notion-api.js"></script>
+</body>
+</html>
