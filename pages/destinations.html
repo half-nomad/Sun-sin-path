@@ -7,12 +7,15 @@
     <title>여행지 - 순신의 길</title>
     
     <!-- CSS -->
+    <link rel="stylesheet" href="../css/variables.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/interactions.css">
+    <link rel="stylesheet" href="../css/destinations.css">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -21,7 +24,7 @@
             <div class="nav-brand">
                 <a href="../index.html">순신의 길</a>
             </div>
-            <button class="nav-toggle" id="navToggle">
+            <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -43,16 +46,71 @@
         </div>
     </section>
 
-    <!-- Destinations Grid -->
-    <section class="destinations-section">
+    <!-- Search & Filter Controls -->
+    <section class="destinations-controls">
         <div class="container">
-            <div id="destinations-grid">
-                <!-- Destinations will be loaded here from Notion -->
+            <div class="controls-wrapper">
+                <!-- 검색 박스 -->
+                <div class="search-box">
+                    <div class="search-icon">🔍</div>
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        id="searchInput"
+                        placeholder="여행지 이름, 지역, 키워드로 검색..."
+                        autocomplete="off"
+                    >
+                </div>
+                
+                <!-- 카테고리 필터 -->
+                <div class="category-filters">
+                    <button class="category-btn active" data-category="all">전체</button>
+                    <button class="category-btn" data-category="기념관">기념관</button>
+                    <button class="category-btn" data-category="전적지">전적지</button>
+                    <button class="category-btn" data-category="유적지">유적지</button>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Main Content -->
+    <section class="destinations-section">
+        <div class="container">
+            <!-- 결과 정보 -->
+            <div class="results-info">
+                <div class="results-count" id="resultsCount">
+                    검색 중...
+                </div>
+                <select class="sort-dropdown" id="sortSelect">
+                    <option value="name">이름순</option>
+                    <option value="location">지역순</option>
+                    <option value="category">카테고리순</option>
+                </select>
+            </div>
+            
+            <!-- 여행지 그리드 -->
+            <div class="destinations-grid" id="destinations-grid">
+                <!-- 카드들이 여기에 동적으로 생성됩니다 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 상세 모달 -->
+    <div class="destination-modal" id="destinationModal">
+        <div class="modal-content" id="modal-body">
+            <!-- 모달 내용이 여기에 동적으로 생성됩니다 -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 순신의 길. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
     <script src="../js/main.js"></script>
-    <script src="../js/notion-api.js"></script>
+    <script src="../js/destinations.js"></script>
 </body>
 </html>
