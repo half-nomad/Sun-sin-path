@@ -1,0 +1,74 @@
+name: 📊 노션 데이터 업데이트
+
+# 수동 트리거 방식 - GitHub에서 버튼 클릭으로 실행
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: '업데이트 이유를 입력하세요'
+        required: true
+        default: '여행지 정보 업데이트'
+        type: string
+      update_type:
+        description: '업데이트할 데이터 타입'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+        - all
+        - timeline
+        - destinations  
+        - courses
+
+jobs:
+  update-notion-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 🔄 코드 체크아웃
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: 🟢 Node.js 설정
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: 📦 의존성 설치
+      run: npm install
+    
+    - name: 📊 노션 데이터 가져오기
+      env:
+        NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        UPDATE_TYPE: ${{ github.event.inputs.update_type }}
+        UPDATE_REASON: ${{ github.event.inputs.reason }}
+      run: node scripts/fetch-notion-data.js
+    
+    - name: 🔍 변경사항 확인
+      id: check_changes
+      run: |
+        if git diff --quiet assets/data/; then
+          echo "changes=false" >> $GITHUB_OUTPUT
+          echo "📝 변경된 데이터가 없습니다."
+        else
+          echo "changes=true" >> $GITHUB_OUTPUT
+          echo "✅ 새로운 데이터가 감지되었습니다."
+        fi
+    
+    - name: 💾 변경사항 커밋 및 푸시  
+      if: steps.check_changes.outputs.changes == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add assets/data/
+        git commit -m "🔄 노션 데이터 업데이트: ${{ github.event.inputs.reason }}"
+        git push
+    
+    - name: 📢 완료 알림
+      run: |
+        echo "🎉 노션 데이터 업데이트 완료!"
+        echo "📅 실행 시간: $(date)"
+        echo "📝 업데이트 이유: ${{ github.event.inputs.reason }}"
+        echo "📊 업데이트 타입: ${{ github.event.inputs.update_type }}"
