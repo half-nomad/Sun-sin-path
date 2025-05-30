@@ -13,9 +13,34 @@
 
 ## 🛠️ 기술 스택
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
-- **데이터**: Notion API (실시간 연동)
-- **이미지**: GPT-4 API (자동 생성)
+- **CMS**: Notion API (노션을 CMS로 활용)
+- **자동화**: GitHub Actions (데이터 업데이트)
 - **배포**: GitHub Pages
+
+## 📊 **노션 데이터 업데이트 방법**
+
+### **🔄 GitHub Actions로 수동 업데이트**
+1. GitHub 저장소의 **"Actions"** 탭으로 이동
+2. **"📊 노션 데이터 업데이트"** 워크플로우 선택
+3. **"Run workflow"** 버튼 클릭
+4. 업데이트 이유와 타입 선택:
+   - **업데이트 이유**: 예) "여행지 정보 추가"
+   - **업데이트 타입**: `all`, `timeline`, `destinations`, `courses` 중 선택
+5. **"Run workflow"** 실행
+
+### **📝 업데이트 과정**
+```
+노션 DB 수정 → GitHub Actions 실행 → JSON 생성 → 자동 커밋 → 웹사이트 반영
+```
+
+### **🔑 필요한 GitHub Secrets**
+- `NOTION_TOKEN`: 노션 API 토큰 (자동 설정됨)
+
+### **💡 언제 업데이트해야 하나요?**
+- 새로운 여행지 정보 추가시
+- 기존 정보 수정시
+- 새로운 여행코스 추가시
+- 연표 정보 업데이트시
 
 ## 📂 프로젝트 구조
 ```

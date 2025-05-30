@@ -1,60 +1,42 @@
 {
-  "timeline": [
+  "data": [
     {
+      "id": "timeline-001",
       "year": 1545,
-      "event": "이순신 탄생",
-      "description": "3월 28일(음력) 서울 건천동에서 출생",
-      "location": "서울특별시",
-      "category": "생애"
+      "title": "이순신 출생",
+      "description": "한성 건천동에서 이정과 초계 변씨 사이에서 셋째 아들로 출생",
+      "category": "생애",
+      "importance": 5,
+      "createdTime": "2025-05-29T00:00:00.000Z"
     },
     {
+      "id": "timeline-002", 
       "year": 1576,
-      "event": "무과 급제",
-      "description": "32세의 나이로 식년무과에 병과로 급제",
-      "location": "서울특별시",
-      "category": "생애"
+      "title": "무과 급제",
+      "description": "32세에 무과에 급제하여 관직에 입문",
+      "category": "생애",
+      "importance": 4,
+      "createdTime": "2025-05-29T00:00:00.000Z"
     },
     {
-      "year": 1591,
-      "event": "전라좌수사 임명",
-      "description": "정읍 현감에서 전라좌도 수군절도사로 승진",
-      "location": "전라남도 여수",
-      "category": "임명"
-    },
-    {
+      "id": "timeline-003",
       "year": 1592,
-      "event": "옥포해전",
-      "description": "임진왜란 첫 해전에서 승리",
-      "location": "경상남도 거제",
-      "category": "전투"
+      "title": "임진왜란 발발",
+      "description": "임진왜란이 발발하며 조선 수군의 활약 시작",
+      "category": "전쟁",
+      "importance": 5,
+      "createdTime": "2025-05-29T00:00:00.000Z"
     },
     {
-      "year": 1592,
-      "event": "한산도대첩",
-      "description": "학익진 전법으로 왜군 대파",
-      "location": "경상남도 통영",
-      "category": "전투"
-    },
-    {
-      "year": 1597,
-      "event": "백의종군",
-      "description": "모함으로 파직 후 백의종군",
-      "location": "전국",
-      "category": "시련"
-    },
-    {
-      "year": 1597,
-      "event": "명량해전",
-      "description": "13척으로 133척을 물리친 기적의 승리",
-      "location": "전라남도 진도",
-      "category": "전투"
-    },
-    {
+      "id": "timeline-004",
       "year": 1598,
-      "event": "노량해전과 순국",
-      "description": "마지막 해전에서 전사",
-      "location": "경상남도 남해",
-      "category": "전투"
+      "title": "노량대첩과 순국",
+      "description": "노량대첩에서 적탄에 맞아 장렬히 순국",
+      "category": "전투",
+      "importance": 5,
+      "createdTime": "2025-05-29T00:00:00.000Z"
     }
-  ]
+  ],
+  "lastUpdated": "2025-05-29T12:00:00.000Z",
+  "count": 4
 }
