@@ -1,8 +1,7 @@
 # Dependencies
 node_modules/
 
-# API Keys
-config/api-keys.js
+# API Keys (실제 토큰이 포함된 파일만)
 .env
 .env.local
 
