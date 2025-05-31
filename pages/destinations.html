@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="이순신 장군 관련 전국 여행지 소개">
+    <title>여행지 - 순신의 길</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/interactions.css">
+    <link rel="stylesheet" href="../css/destinations.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html">순신의 길</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html">홈</a></li>
+                <li><a href="timeline.html">연표</a></li>
+                <li><a href="destinations.html" class="active">여행지</a></li>
+                <li><a href="courses.html">추천코스</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>이순신 관련 여행지</h1>
+            <p>전국의 이순신 장군 유적지와 기념관을 만나보세요</p>
+        </div>
+    </section>
+
+    <!-- Search & Filter Controls -->
+    <section class="destinations-controls">
+        <div class="container">
+            <div class="controls-wrapper">
+                <!-- 검색 박스 -->
+                <div class="search-box">
+                    <div class="search-icon">🔍</div>
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        id="searchInput"
+                        placeholder="여행지 이름, 지역, 키워드로 검색..."
+                        autocomplete="off"
+                    >
+                </div>
+                
+                <!-- 카테고리 필터 -->
+                <div class="category-filters">
+                    <button class="category-btn active" data-category="all">전체</button>
+                    <button class="category-btn" data-category="기념관">기념관</button>
+                    <button class="category-btn" data-category="전적지">전적지</button>
+                    <button class="category-btn" data-category="유적지">유적지</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="destinations-section">
+        <div class="container">
+            <!-- 결과 정보 -->
+            <div class="results-info">
+                <div class="results-count" id="resultsCount">
+                    검색 중...
+                </div>
+                <select class="sort-dropdown" id="sortSelect">
+                    <option value="name">이름순</option>
+                    <option value="location">지역순</option>
+                    <option value="category">카테고리순</option>
+                </select>
+            </div>
+            
+            <!-- 여행지 그리드 -->
+            <div class="destinations-grid" id="destinations-grid">
+                <!-- 카드들이 여기에 동적으로 생성됩니다 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 상세 모달 -->
+    <div class="destination-modal" id="destinationModal">
+        <div class="modal-content" id="modal-body">
+            <!-- 모달 내용이 여기에 동적으로 생성됩니다 -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 순신의 길. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../config/api-keys.js"></script>
+    <script src="../js/data-loader.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/destinations.js"></script>
+</body>
+</html>

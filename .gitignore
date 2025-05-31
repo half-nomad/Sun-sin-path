@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# API Keys (실제 토큰이 포함된 파일만)
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Build outputs
+dist/
+build/

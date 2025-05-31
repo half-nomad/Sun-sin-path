@@ -1,0 +1,48 @@
+{
+  "data": [
+    {
+      "id": "dest-001",
+      "name": "현충사",
+      "address": "충청남도 아산시 염치읍 현충사길 126",
+      "category": "사당",
+      "description": "이순신 장군의 영정과 위패를 모신 사당으로 1706년 숙종에 의해 창건",
+      "openingHours": "09:00-18:00 (동절기 17:00)",
+      "admissionFee": "어른 1,500원, 청소년 1,000원",
+      "importance": 5,
+      "phone": "041-539-4600",
+      "website": "https://hcs.cha.go.kr",
+      "images": [],
+      "createdTime": "2025-05-29T00:00:00.000Z"
+    },
+    {
+      "id": "dest-002",
+      "name": "통영 이순신공원",
+      "address": "경상남도 통영시 도남동",
+      "category": "공원",
+      "description": "이순신 장군의 한산대첩 승전을 기념하여 조성된 공원",
+      "openingHours": "24시간 개방",
+      "admissionFee": "무료",
+      "importance": 4,
+      "phone": "055-650-0580",
+      "website": "",
+      "images": [],
+      "createdTime": "2025-05-29T00:00:00.000Z"
+    },
+    {
+      "id": "dest-003",
+      "name": "여수 이순신광장",
+      "address": "전라남도 여수시 종화동",
+      "category": "광장",
+      "description": "이순신 장군 동상과 거북선 모형이 설치된 시민 휴식공간",
+      "openingHours": "24시간 개방", 
+      "admissionFee": "무료",
+      "importance": 4,
+      "phone": "061-659-3873",
+      "website": "",
+      "images": [],
+      "createdTime": "2025-05-29T00:00:00.000Z"
+    }
+  ],
+  "lastUpdated": "2025-05-29T12:00:00.000Z",
+  "count": 3
+}

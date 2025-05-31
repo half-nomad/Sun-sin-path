@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="이순신 장군의 생애와 주요 전투 연표">
+    <title>연표 - 순신의 길</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/interactions.css">
+    <link rel="stylesheet" href="../css/timeline.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html">순신의 길</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html">홈</a></li>
+                <li><a href="timeline.html" class="active">연표</a></li>
+                <li><a href="destinations.html">여행지</a></li>
+                <li><a href="courses.html">추천코스</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>충무공 이순신 연표</h1>
+            <p>1545년부터 1598년까지, 조선을 구한 영웅의 발자취</p>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <!-- 필터 버튼 -->
+            <div class="timeline-filters">
+                <button class="filter-btn active" data-filter="all">전체</button>
+                <button class="filter-btn" data-filter="생애">생애</button>
+                <button class="filter-btn" data-filter="전투">전투</button>
+                <button class="filter-btn" data-filter="임명">임명</button>
+                <button class="filter-btn" data-filter="시련">시련</button>
+            </div>
+            
+            <!-- 타임라인 컨테이너 -->
+            <div class="timeline" id="timeline-container">
+                <!-- 타임라인 아이템들이 여기에 동적으로 생성됩니다 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 상세 모달 -->
+    <div class="timeline-modal" id="timelineModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div id="modal-body">
+                <!-- 모달 내용이 여기에 동적으로 생성됩니다 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 순신의 길. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../config/api-keys.js"></script>
+    <script src="../js/data-loader.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/timeline.js"></script>
+</body>
+</html>

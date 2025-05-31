@@ -1,0 +1,36 @@
+{
+  "name": "sunsin-path",
+  "version": "1.0.0",
+  "description": "순신의 길 - 이순신 역사여행 가이드 웹사이트",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8080",
+    "dev": "python -m http.server 8080",
+    "fetch-notion": "node scripts/fetch-notion-data.js",
+    "update-data": "npm run fetch-notion",
+    "test": "echo \"Tests not implemented yet\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/half-nomad/Sun-sin-path.git"
+  },
+  "keywords": [
+    "이순신",
+    "충무공", 
+    "역사여행",
+    "한국관광",
+    "문화유산",
+    "notion-cms"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/half-nomad/Sun-sin-path/issues"
+  },
+  "homepage": "https://half-nomad.github.io/Sun-sin-path/",
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

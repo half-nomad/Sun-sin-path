@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "id": "course-001",
+      "title": "충남 아산 1박2일",
+      "duration": "1박2일",
+      "description": "현충사를 중심으로 한 아산 지역 이순신 유적지 탐방",
+      "destinations": ["현충사", "아산 이순신 생가", "온양온천"],
+      "transportation": "KTX 천안아산역 이용",
+      "budget": "15만원",
+      "difficulty": "쉬움",
+      "season": "사계절",
+      "highlights": "현충사 참배, 온양온천 휴식",
+      "createdTime": "2025-05-29T00:00:00.000Z"
+    },
+    {
+      "id": "course-002",
+      "title": "경남 통영 2박3일",
+      "duration": "2박3일", 
+      "description": "한산대첩의 현장 통영에서 이순신의 발자취 탐방",
+      "destinations": ["통영 이순신공원", "한산도", "미륵산", "동피랑마을"],
+      "transportation": "고속버스 터미널 이용",
+      "budget": "25만원",
+      "difficulty": "보통",
+      "season": "봄, 가을",
+      "highlights": "한산대첩 역사탐방, 통영 8경 관광",
+      "createdTime": "2025-05-29T00:00:00.000Z"
+    }
+  ],
+  "lastUpdated": "2025-05-29T12:00:00.000Z",
+  "count": 2
+}

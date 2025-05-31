@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="충무공 이순신의 발자취를 따라 떠나는 역사 여행 가이드">
+    <meta name="keywords" content="이순신, 충무공, 역사여행, 한국관광, 문화유산">
+    <meta property="og:title" content="순신의 길 - 이순신 역사여행 가이드">
+    <meta property="og:description" content="이순신 장군의 발자취를 따라가는 특별한 역사 여행">
+    <meta property="og:image" content="./assets/images/og-image.jpg">
+    <title>순신의 길 - 이순신 역사여행 가이드</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">순신의 길</a>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active">홈</a></li>
+                <li><a href="pages/timeline.html">연표</a></li>
+                <li><a href="pages/destinations.html">여행지</a></li>
+                <li><a href="pages/courses.html">추천코스</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background">
+            <div class="wave-animation"></div>
+            <div class="particle-container" id="particles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">2025 역사여행</div>
+            <h1 class="hero-title">
+                <span class="title-line1">순신의</span>
+                <span class="title-line2">길</span>
+            </h1>
+            <p class="hero-subtitle">
+                <span class="typing-text" id="typingText"></span>
+                <span class="cursor">|</span>
+            </p>
+            <div class="hero-buttons">
+                <button class="hero-cta primary" onclick="scrollToSection('features')">
+                    <span class="button-text">여행 시작하기</span>
+                    <span class="button-icon">→</span>
+                </button>
+                <button class="hero-cta secondary" onclick="openVideo()">
+                    <span class="play-icon">▶</span>
+                    <span>소개 영상</span>
+                </button>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+                <span class="scroll-text">스크롤하여 탐험하기</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">특별한 경험</span>
+                <h2 class="section-title">이순신과 함께하는<br><span class="highlight">특별한 여행</span></h2>
+                <p class="section-subtitle">역사와 현재가 만나는 감동의 순간</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card scroll-fade-in" data-delay="0s">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">📅</div>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3>인터랙티브 연표</h3>
+                    <p>이순신 장군의 생애와 주요 전투를 시간순으로 탐험하세요</p>
+                    <a href="pages/timeline.html" class="feature-link">
+                        자세히 보기 <span class="arrow">→</span>
+                    </a>
+                </div>
+                
+                <div class="feature-card scroll-fade-in" data-delay="0.2s">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">📍</div>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3>전국 여행지 정보</h3>
+                    <p>전국 20여 곳의 이순신 관련 명소를 상세히 소개합니다</p>
+                    <a href="pages/destinations.html" class="feature-link">
+                        자세히 보기 <span class="arrow">→</span>
+                    </a>
+                </div>
+                
+                <div class="feature-card scroll-fade-in" data-delay="0.4s">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon">🗺️</div>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3>맞춤형 여행 코스</h3>
+                    <p>테마별, 기간별 맞춤형 여행 일정을 제공합니다</p>
+                    <a href="pages/courses.html" class="feature-link">
+                        자세히 보기 <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 순신의 길. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="config/api-keys.js"></script>
+    <script src="js/data-loader.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

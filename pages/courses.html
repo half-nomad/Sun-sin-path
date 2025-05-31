@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="이순신 역사여행 추천 코스">
+    <title>추천코스 - 순신의 길</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/interactions.css">
+    <link rel="stylesheet" href="../css/courses.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html">순신의 길</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html">홈</a></li>
+                <li><a href="timeline.html">연표</a></li>
+                <li><a href="destinations.html">여행지</a></li>
+                <li><a href="courses.html" class="active">추천코스</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>맞춤형 여행 코스</h1>
+            <p>테마별, 기간별로 준비된 특별한 이순신 여행 코스를 만나보세요</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="courses-section">
+        <div class="container">
+            <div class="section-intro">
+                <h2>📚 역사와 함께하는 특별한 여정</h2>
+                <p>이순신 장군의 발자취를 따라 떠나는 감동적인 여행 코스를 소개합니다.</p>
+            </div>
+            
+            <div id="courses-container">
+                <!-- 코스 카드들이 여기에 동적으로 생성됩니다 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 순신의 길. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../config/api-keys.js"></script>
+    <script src="../js/data-loader.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/courses.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "data": [
+    {
+      "id": "timeline-001",
+      "year": 1545,
+      "title": "이순신 출생",
+      "description": "한성 건천동에서 이정과 초계 변씨 사이에서 셋째 아들로 출생",
+      "category": "생애",
+      "importance": 5,
+      "createdTime": "2025-05-29T00:00:00.000Z"
+    },
+    {
+      "id": "timeline-002", 
+      "year": 1576,
+      "title": "무과 급제",
+      "description": "32세에 무과에 급제하여 관직에 입문",
+      "category": "생애",
+      "importance": 4,
+      "createdTime": "2025-05-29T00:00:00.000Z"
+    },
+    {
+      "id": "timeline-003",
+      "year": 1592,
+      "title": "임진왜란 발발",
+      "description": "임진왜란이 발발하며 조선 수군의 활약 시작",
+      "category": "전쟁",
+      "importance": 5,
+      "createdTime": "2025-05-29T00:00:00.000Z"
+    },
+    {
+      "id": "timeline-004",
+      "year": 1598,
+      "title": "노량대첩과 순국",
+      "description": "노량대첩에서 적탄에 맞아 장렬히 순국",
+      "category": "전투",
+      "importance": 5,
+      "createdTime": "2025-05-29T00:00:00.000Z"
+    }
+  ],
+  "lastUpdated": "2025-05-29T12:00:00.000Z",
+  "count": 4
+}
