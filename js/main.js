@@ -1,21 +1,34 @@
-// Navigation Toggle
+// Navigation & 카드 클릭
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
-
 navToggle?.addEventListener('click', () => {
     navMenu.classList.toggle('active');
     navToggle.classList.toggle('active');
 });
 
-// Smooth Scroll
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-    }
+// 카드 클릭 기능
+function makeCardsClickable() {
+    const cards = document.querySelectorAll('.feature-card');
+    cards.forEach(card => {
+        const link = card.querySelector('.feature-link');
+        if (link) {
+            const href = link.getAttribute('href');
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', (e) => {
+                if (e.target.closest('.feature-link')) return;
+                window.location.href = href;
+            });
+        }
+    });
+    console.log('✅ 카드 클릭 기능 활성화');
 }
 
-// Navbar Background on Scroll
+// Scroll & Animation
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) section.scrollIntoView({ behavior: 'smooth' });
+}
+
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
     if (window.scrollY > 100) {
@@ -27,26 +40,17 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Typing Animation
+// Typing Text
 const typingTexts = [
     "충무공 이순신의 발자취를 따라 떠나는 역사 여행",
     "한산도부터 명량까지, 승리의 항로를 탐험하세요",
     "살아있는 역사를 만나는 특별한 여정"
 ];
-
-let textIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-const typingSpeed = 100;
-const deletingSpeed = 50;
-const pauseTime = 2000;
-
+let textIndex = 0, charIndex = 0, isDeleting = false;
 function typeText() {
     const typingElement = document.getElementById('typingText');
     if (!typingElement) return;
-
     const currentText = typingTexts[textIndex];
-    
     if (isDeleting) {
         typingElement.textContent = currentText.substring(0, charIndex - 1);
         charIndex--;
@@ -54,24 +58,22 @@ function typeText() {
         typingElement.textContent = currentText.substring(0, charIndex + 1);
         charIndex++;
     }
-
     if (!isDeleting && charIndex === currentText.length) {
         isDeleting = true;
-        setTimeout(typeText, pauseTime);
+        setTimeout(typeText, 2000);
     } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         textIndex = (textIndex + 1) % typingTexts.length;
         setTimeout(typeText, 500);
     } else {
-        setTimeout(typeText, isDeleting ? deletingSpeed : typingSpeed);
+        setTimeout(typeText, isDeleting ? 50 : 100);
     }
 }
 
-// Particle Animation
+// Particles
 function createParticles() {
     const container = document.getElementById('particles');
     if (!container) return;
-
     for (let i = 0; i < 30; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
@@ -84,39 +86,23 @@ function createParticles() {
     }
 }
 
-// Scroll Animation Observer
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            
-            // 특별한 애니메이션 트리거
-            if (entry.target.classList.contains('feature-card')) {
-                entry.target.style.animationDelay = entry.target.dataset.delay || '0s';
-            }
-        }
-    });
-}, observerOptions);
-
-// Initialize on DOM Load
+// Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    // Start typing animation
     setTimeout(typeText, 1000);
-    
-    // Create particles
     createParticles();
+    makeCardsClickable();
     
-    // Observe elements
-    const elements = document.querySelectorAll('.scroll-fade-in, .feature-card');
-    elements.forEach(el => observer.observe(el));
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.scroll-fade-in, .feature-card').forEach(el => 
+        observer.observe(el)
+    );
 });
 
-// Video Modal (placeholder)
-function openVideo() {
-    alert('비디오 기능은 곧 추가됩니다!');
-}
+function openVideo() { alert('비디오 기능은 곧 추가됩니다!'); }
