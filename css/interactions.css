@@ -1,0 +1,42 @@
+/* 기본 인터랙션 */
+.btn { transition: all 0.3s ease; }
+.btn:hover { 
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 카드 효과 */
+.card, .timeline-item, .destination-card, .course-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card:hover, .timeline-item:hover, 
+.destination-card:hover, .course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* 링크 & 입력 */
+a { transition: color 0.3s ease; }
+a:hover { color: var(--primary-color, #1e40af); }
+input, select, textarea { transition: all 0.3s ease; border: 2px solid transparent; }
+input:focus, select:focus, textarea:focus {
+    outline: none; border-color: var(--primary-color, #1e40af);
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+/* 로딩 */
+.loading-spinner {
+    display: inline-block; width: 20px; height: 20px;
+    border: 3px solid rgba(0, 0, 0, 0.1); border-radius: 50%;
+    border-top-color: var(--primary-color, #1e40af);
+    animation: spin 1s ease-in-out infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .card:hover, .timeline-item:hover, 
+    .destination-card:hover, .course-card:hover { 
+        transform: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+    }
+}
