@@ -6,7 +6,13 @@ class DestinationsPage {
     }
     async init() {
         try {
-            this.destinations = await window.SunsinLoader.getDestinations();
+            // DataLoader 대기
+            let retryCount = 0;
+            while ((!window.SunsinLoader || !window.DataLoader) && retryCount < 50) {
+                await new Promise(resolve => setTimeout(resolve, 100));
+                retryCount++;
+            }
+            this.destinations = await DataLoader.loadDestinations();
             console.log(`✅ 여행지 데이터 ${this.destinations.length}개 로드`);
             this.renderDestinations();
         } catch (error) {

@@ -6,7 +6,13 @@ class TimelinePage {
     }
     async init() {
         try {
-            this.timeline = await window.SunsinLoader.getTimeline();
+            // DataLoader 대기
+            let retryCount = 0;
+            while ((!window.SunsinLoader || !window.DataLoader) && retryCount < 50) {
+                await new Promise(resolve => setTimeout(resolve, 100));
+                retryCount++;
+            }
+            this.timeline = await DataLoader.loadTimeline();
             console.log(`✅ 연표 데이터 ${this.timeline.length}개 로드`);
             this.renderTimeline();
         } catch (error) {
