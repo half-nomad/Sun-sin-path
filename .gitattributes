@@ -1,0 +1,32 @@
+# Git merge conflict 방지 설정
+# JSON 데이터 파일들 - merge conflict 시 수동 해결 필요
+*.json merge=ours
+assets/data/*.json merge=ours
+
+# 중요 설정 파일들 - 로컬 우선
+config/*.js merge=ours
+js/data-loader*.js merge=ours
+
+# 텍스트 파일 설정
+*.md text eol=lf
+*.txt text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.json text eol=lf
+
+# 바이너리 파일 설정
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+
+# 자동 생성 파일들 - 충돌 시 재생성
+temp-*.* merge=ours
+*-backup.* merge=ours
+*-old.* merge=ours

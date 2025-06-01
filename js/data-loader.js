@@ -3,24 +3,36 @@
 
 class SunsinDataLoader {
     constructor() {
-        // 현재 경로에 따라 baseUrl 동적 설정
+        // 현재 경로에 따라 baseUrl 동적 설정 (개선된 로직)
         const currentPath = window.location.pathname;
+        const currentUrl = window.location.href;
         console.log(`🔍 현재 경로 분석: ${currentPath}`);
+        console.log(`🔍 현재 URL: ${currentUrl}`);
         
-        if (currentPath.includes('/pages/')) {
-            this.baseUrl = '../assets/data/';
-            console.log('📁 pages 디렉토리에서 접근 - 상위 경로 사용');
+        // 더 정확한 경로 감지
+        if (currentPath.includes('/pages/') || currentPath.endsWith('.html')) {
+            // pages 폴더 내부이거나 HTML 파일인 경우
+            if (currentPath.split('/').length > 2) {
+                this.baseUrl = '../assets/data/';
+                console.log('📁 서브 디렉토리에서 접근 - 상위 경로 사용');
+            } else {
+                this.baseUrl = './assets/data/';
+                console.log('📁 루트에서 접근 - 현재 경로 사용');
+            }
         } else {
             this.baseUrl = './assets/data/';
             console.log('📁 루트에서 접근 - 현재 경로 사용');
         }
         
-        console.log(`🎯 baseUrl 설정: ${this.baseUrl}`);
+        console.log(`🎯 baseUrl 최종 설정: ${this.baseUrl}`);
         
         this.cache = new Map();
         this.cacheTTL = 5 * 60 * 1000; // 5분 캐시
         
-        console.log(`🚀 순신의 길 데이터 로더 v3 초기화 완료 (경로: ${this.baseUrl})`);
+        // 캐시 버스터 추가 (merge conflict 해결 후 강제 리로드)
+        this.cacheVersion = Date.now();
+        
+        console.log(`🚀 순신의 길 데이터 로더 v4 초기화 완료 (경로: ${this.baseUrl}, 버전: ${this.cacheVersion})`);
     }
 
     // JSON 파일 로드 (캐시 포함)
@@ -34,11 +46,18 @@ class SunsinDataLoader {
             return cached.data;
         }
 
-        const fullUrl = `${this.baseUrl}${filename}`;
+        const fullUrl = `${this.baseUrl}${filename}?v=${this.cacheVersion}`;
         console.log(`📥 JSON 파일 로드 중: ${filename} (${fullUrl})`);
 
         try {
-            const response = await fetch(fullUrl);
+            const response = await fetch(fullUrl, {
+                method: 'GET',
+                headers: {
+                    'Cache-Control': 'no-cache, no-store, must-revalidate',
+                    'Pragma': 'no-cache',
+                    'Expires': '0'
+                }
+            });
             
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}: ${response.statusText}`);
