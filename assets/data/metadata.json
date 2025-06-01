@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
   "lastUpdate": "2025-06-01T02:00:34.425Z",
   "updateReason": "실제 데이터 구조로 업데이트",
+=======
+  "lastUpdate": "2025-06-01T00:50:13.001Z",
+  "updateReason": "수동 실행",
+>>>>>>> aa4861bbb3786e5c27986a377ac8fe4ab6ce543c
   "updateType": "all",
   "databases": {
     "travelCourses": "20109131-4f8f-80a1-b28d-cc04552f870f",
