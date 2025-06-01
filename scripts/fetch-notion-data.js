@@ -11,9 +11,9 @@ const NOTION_CONFIG = {
     version: '2022-06-28',
     baseUrl: 'https://api.notion.com/v1',
     databases: {
-        travelCourses: '201091314f8f80a1b28dcc04552f870f',
+        travelCourses: '20109131-4f8f-80a1-b28d-cc04552f870f',
         timeline: '20109131-4f8f-80a3-908b-e834651bd807', 
-        destinations: '201091314f8f803aa27fecf11768b3a4'
+        destinations: '20109131-4f8f-803a-a27f-ecf11768b3a4'
     }
 };
 
@@ -37,7 +37,9 @@ async function callNotionAPI(endpoint, options = {}) {
         });
 
         if (!response.ok) {
-            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            const errorText = await response.text();
+            console.error(`HTTP ${response.status} 에러 상세:`, errorText);
+            throw new Error(`HTTP ${response.status}: ${response.statusText} - ${errorText}`);
         }
 
         return await response.json();
@@ -98,18 +100,18 @@ async function fetchTimeline() {
     console.log('📅 연표 데이터 가져오기 시작...');
     
     const results = await queryDatabase(NOTION_CONFIG.databases.timeline, {
-        sorts: [{ property: '년도', direction: 'ascending' }]
+        sorts: [{ property: '사건 날짜', direction: 'ascending' }]
     });
     
     const timeline = results.map(item => {
         const props = item.properties;
         return {
             id: item.id,
-            year: getPropertyValue(props.년도),
-            title: getPropertyValue(props.제목),
-            description: getPropertyValue(props.설명),
-            category: getPropertyValue(props.카테고리),
-            importance: getPropertyValue(props.중요도),
+            date: getPropertyValue(props['사건 날짜']),
+            title: getPropertyValue(props['사건명']),
+            description: getPropertyValue(props['상세설명']),
+            location: getPropertyValue(props['관련장소']),
+            importance: getPropertyValue(props['중요도 ']),
             createdTime: item.created_time,
             lastEdited: item.last_edited_time
         };
@@ -123,24 +125,18 @@ async function fetchTimeline() {
 async function fetchDestinations() {
     console.log('🏛️ 여행지 데이터 가져오기 시작...');
     
-    const results = await queryDatabase(NOTION_CONFIG.databases.destinations, {
-        sorts: [{ property: '중요도', direction: 'descending' }]
-    });
+    const results = await queryDatabase(NOTION_CONFIG.databases.destinations);
     
     const destinations = results.map(item => {
         const props = item.properties;
         return {
             id: item.id,
-            name: getPropertyValue(props.장소명),
-            address: getPropertyValue(props.주소),
-            category: getPropertyValue(props.카테고리),
-            description: getPropertyValue(props.설명),
-            openingHours: getPropertyValue(props.운영시간),
-            admissionFee: getPropertyValue(props.입장료),
-            importance: getPropertyValue(props.중요도),
-            phone: getPropertyValue(props.전화번호),
-            website: getPropertyValue(props.웹사이트),
-            images: getPropertyValue(props.이미지),
+            name: getPropertyValue(props['장소명']),
+            address: getPropertyValue(props['주소']),
+            category: getPropertyValue(props['카테고리']),
+            description: getPropertyValue(props['설명']),
+            visitInfo: getPropertyValue(props['관람정보']),
+            images: getPropertyValue(props['이미지']),
             createdTime: item.created_time
         };
     });
@@ -161,15 +157,14 @@ async function fetchTravelCourses() {
         const props = item.properties;
         return {
             id: item.id,
-            title: getPropertyValue(props.코스명),
-            duration: getPropertyValue(props.기간),
-            description: getPropertyValue(props.설명),
-            destinations: getPropertyValue(props.여행지목록),
-            transportation: getPropertyValue(props.교통편),
-            budget: getPropertyValue(props.예산),
-            difficulty: getPropertyValue(props.난이도),
-            season: getPropertyValue(props.추천계절),
-            highlights: getPropertyValue(props.주요포인트),
+            title: getPropertyValue(props['코스명']),
+            duration: getPropertyValue(props['기간']),
+            departure: getPropertyValue(props['출발']),
+            return: getPropertyValue(props['복귀']),
+            day1: getPropertyValue(props['Day 1']),
+            day2: getPropertyValue(props['Day 2']),
+            day3: getPropertyValue(props['Day 3']),
+            includedPlaces: getPropertyValue(props['포함장소']),
             createdTime: item.created_time
         };
     });
