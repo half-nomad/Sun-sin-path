@@ -16,7 +16,7 @@
   },
   "keywords": [
     "이순신",
-    "충무공", 
+    "충무공",
     "역사여행",
     "한국관광",
     "문화유산",
@@ -31,7 +31,10 @@
   "dependencies": {
     "node-fetch": "^3.3.2"
   },
+<<<<<<< HEAD
+=======
   "devDependencies": {},
+>>>>>>> aa4861bbb3786e5c27986a377ac8fe4ab6ce543c
   "engines": {
     "node": ">=18.0.0"
   }
