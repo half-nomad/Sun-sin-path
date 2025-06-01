@@ -18,6 +18,15 @@ Thumbs.db
 
 # Temporary files
 *.tmp
+
+# Backup and temporary files (정리 후 추가)
+.backup/
+*.bak
+*-backup.*
+*-old.*
+*-duplicate
+temp-*.*
+test-*.html
 *.temp
 
 # Build outputs
