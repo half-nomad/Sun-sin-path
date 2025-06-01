@@ -1,4 +1,4 @@
-// 여행코스 페이지 - 2025-06-01 수정본
+// 여행코스 페이지 - 2025-06-01 JSON 구조 매칭 버전
 class CoursesPage {
     constructor() {
         this.courses = [];
@@ -7,7 +7,6 @@ class CoursesPage {
     
     async init() {
         try {
-            // DataLoader 대기
             let retryCount = 0;
             while (!window.sunsinData && retryCount < 50) {
                 await new Promise(resolve => setTimeout(resolve, 100));
@@ -24,54 +23,42 @@ class CoursesPage {
     
     renderCourses() {
         const container = document.getElementById('courses-container');
-        if (!container) {
-            console.error('❌ courses-container 요소를 찾을 수 없습니다');
-            return;
-        }
+        if (!container) return;
         
         if (!this.courses || this.courses.length === 0) {
-            console.error('❌ 렌더링할 코스 데이터가 없습니다');
             container.innerHTML = '<p>데이터를 불러오는 중입니다...</p>';
             return;
         }
         
-        console.log(`🎨 ${this.courses.length}개 코스 아이템 렌더링 시작`);
-        
         container.innerHTML = this.courses.map(item => `
             <div class="course-card">
                 <h3>${item.title}</h3>
-                <p>📅 ${item.duration} | 📍 ${item.region}</p>
-                <p>🚗 ${item.difficulty}</p>
-                <p>${item.description}</p>
-                <div class="course-highlights">
+                <p>📅 ${item.duration} | 📍 ${this.getRegion(item.departure)}</p>
+                <p>🚗 ${item.departure}</p>
+                <p>🔄 ${item.return}</p>
+                <div class="course-schedule">
                     <strong>주요 여행지:</strong>
-                    ${item.highlights ? item.highlights.map(h => `<span class="highlight-tag">${h}</span>`).join('') : ''}
+                    ${this.getDayInfo(item)}
                 </div>
-                ${item.schedule ? this.renderSchedule(item.schedule) : ''}
             </div>
         `).join('');
         
         console.log(`✅ 코스 렌더링 완료: ${this.courses.length}개 아이템`);
+    }    
+    getRegion(departure) {
+        if (!departure) return '지역 미정';
+        if (departure.includes('천안아산')) return '충청남도';
+        if (departure.includes('목포')) return '전라남도';
+        if (departure.includes('창원')) return '경상남도';
+        return '전국';
     }
     
-    renderSchedule(schedule) {
-        return `
-            <div class="course-schedule">
-                <strong>일정표:</strong>
-                ${schedule.map(day => `
-                    <div class="day-schedule">
-                        <h4>${day.day}일차</h4>
-                        ${day.activities.map(activity => `
-                            <div class="activity">
-                                <span class="time">${activity.time}</span>
-                                <span class="place">${activity.place}</span>
-                                <span class="desc">${activity.description}</span>
-                            </div>
-                        `).join('')}
-                    </div>
-                `).join('')}
-            </div>
-        `;
+    getDayInfo(item) {
+        let dayInfo = '';
+        if (item.day1) dayInfo += `<p><strong>1일차:</strong> ${item.day1.split('\n')[0]}</p>`;
+        if (item.day2) dayInfo += `<p><strong>2일차:</strong> ${item.day2.split('\n')[0]}</p>`;
+        if (item.day3 && item.day3.trim()) dayInfo += `<p><strong>3일차:</strong> ${item.day3.split('\n')[0]}</p>`;
+        return dayInfo || '<p>일정 정보 준비 중</p>';
     }
 }
 
@@ -84,4 +71,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-console.log('✅ courses.js 로드 완료 (2025-06-01 업데이트)');
+console.log('✅ courses.js 로드 완료 (2025-06-01 JSON 구조 매칭 업데이트)');
