@@ -16,7 +16,7 @@
   },
   "keywords": [
     "이순신",
-    "충무공", 
+    "충무공",
     "역사여행",
     "한국관광",
     "문화유산",
@@ -28,8 +28,9 @@
     "url": "https://github.com/half-nomad/Sun-sin-path/issues"
   },
   "homepage": "https://half-nomad.github.io/Sun-sin-path/",
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
   "engines": {
     "node": ">=18.0.0"
   }
