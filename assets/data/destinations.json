@@ -1,48 +1,66 @@
 {
   "data": [
     {
-      "id": "dest-001",
+      "id": "dest-hyeonchungsa",
       "name": "현충사",
       "address": "충청남도 아산시 염치읍 현충사길 126",
-      "category": "사당",
-      "description": "이순신 장군의 영정과 위패를 모신 사당으로 1706년 숙종에 의해 창건",
-      "openingHours": "09:00-18:00 (동절기 17:00)",
-      "admissionFee": "어른 1,500원, 청소년 1,000원",
-      "importance": 5,
-      "phone": "041-539-4600",
-      "website": "https://hcs.cha.go.kr",
+      "category": "사적지",
+      "description": "충무공 이순신을 모신 사당으로, 이순신의 영정과 유물을 볼 수 있는 곳입니다. 아름다운 정원과 함께 이순신의 생애를 자세히 알 수 있습니다.",
+      "visitInfo": "관람시간: 09:00-18:00 / 입장료: 성인 1,500원 / 휴무: 월요일",
       "images": [],
-      "createdTime": "2025-05-29T00:00:00.000Z"
+      "createdTime": "2025-06-01T02:00:00.000Z"
     },
     {
-      "id": "dest-002",
+      "id": "dest-tongyeong",
       "name": "통영 이순신공원",
-      "address": "경상남도 통영시 도남동",
-      "category": "공원",
-      "description": "이순신 장군의 한산대첩 승전을 기념하여 조성된 공원",
-      "openingHours": "24시간 개방",
-      "admissionFee": "무료",
-      "importance": 4,
-      "phone": "055-650-0580",
-      "website": "",
+      "address": "경상남도 통영시 당동",
+      "category": "공원/기념관",
+      "description": "한산도대첩을 승리로 이끈 이순신의 업적을 기리는 공원. 충무공동상과 함께 한산도를 바라볼 수 있는 전망대가 있습니다.",
+      "visitInfo": "24시간 개방 / 무료 / 주차장 완비",
       "images": [],
-      "createdTime": "2025-05-29T00:00:00.000Z"
+      "createdTime": "2025-06-01T02:00:00.000Z"
     },
     {
-      "id": "dest-003",
-      "name": "여수 이순신광장",
-      "address": "전라남도 여수시 종화동",
-      "category": "광장",
-      "description": "이순신 장군 동상과 거북선 모형이 설치된 시민 휴식공간",
-      "openingHours": "24시간 개방", 
-      "admissionFee": "무료",
-      "importance": 4,
-      "phone": "061-659-3873",
-      "website": "",
+      "id": "dest-hansan-island",
+      "name": "한산도",
+      "address": "경상남도 통영시 한산면 한산리",
+      "category": "역사섬",
+      "description": "한산도대첩의 현장으로, 제승당과 이순신의 흔적을 직접 볼 수 있는 곳입니다. 통영에서 배를 타고 이동할 수 있습니다.",
+      "visitInfo": "페리 운항: 07:00-18:00 / 왕복 12,000원 / 제승당 관람 무료",
       "images": [],
-      "createdTime": "2025-05-29T00:00:00.000Z"
+      "createdTime": "2025-06-01T02:00:00.000Z"
+    },
+    {
+      "id": "dest-myeongnyang",
+      "name": "명량대첩 기념공원",
+      "address": "전라남도 진도군 군내면 명량로 400",
+      "category": "기념공원",
+      "description": "명량대첩의 현장에 조성된 기념공원으로, 울돌목과 명량대교를 조망할 수 있습니다. 이순신의 위대한 승리를 기념하는 각종 시설이 있습니다.",
+      "visitInfo": "09:00-18:00 / 성인 3,000원 / 주차 무료",
+      "images": [],
+      "createdTime": "2025-06-01T02:00:00.000Z"
+    },
+    {
+      "id": "dest-yeosu-turtle",
+      "name": "여수 거북선 전시관",
+      "address": "전라남도 여수시 고소대길 17",
+      "category": "박물관",
+      "description": "이순신이 창조한 거북선을 복원하여 전시하는 곳입니다. 거북선의 구조와 성능을 자세히 알 수 있으며, 실제 크기의 모형을 볼 수 있습니다.",
+      "visitInfo": "09:00-18:00 / 성인 1,000원 / 휴무: 월요일",
+      "images": [],
+      "createdTime": "2025-06-01T02:00:00.000Z"
+    },
+    {
+      "id": "dest-noryang",
+      "name": "노량해전 공원",
+      "address": "경상남도 남해군 설천면 노량리",
+      "category": "추모공원",
+      "description": "이순신이 순국한 노량해전의 현장입니다. 충무공의 마지막 모습을 기리는 추모 시설과 함께 남해의 아름다운 바다를 조망할 수 있습니다.",
+      "visitInfo": "24시간 개방 / 무료 / 일몰 시간 추천",
+      "images": [],
+      "createdTime": "2025-06-01T02:00:00.000Z"
     }
   ],
-  "lastUpdated": "2025-05-29T12:00:00.000Z",
-  "count": 3
+  "lastUpdated": "2025-06-01T02:00:34.425Z",
+  "count": 6
 }

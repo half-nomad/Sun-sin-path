@@ -1,32 +1,59 @@
 {
   "data": [
     {
-      "id": "course-001",
-      "title": "충남 아산 1박2일",
+      "id": "course-1day-asan",
+      "title": "아산 이순신 1일 코스",
       "duration": "1박2일",
-      "description": "현충사를 중심으로 한 아산 지역 이순신 유적지 탐방",
-      "destinations": ["현충사", "아산 이순신 생가", "온양온천"],
-      "transportation": "KTX 천안아산역 이용",
-      "budget": "15만원",
-      "difficulty": "쉬움",
-      "season": "사계절",
-      "highlights": "현충사 참배, 온양온천 휴식",
-      "createdTime": "2025-05-29T00:00:00.000Z"
+      "departure": "서울/수도권",
+      "return": "서울/수도권",
+      "day1": "현충사 → 이순신 유적지 → 온양온천",
+      "day2": "아산 외암민속마을 → 맹씨행단 → 귀가",
+      "day3": "",
+      "includedPlaces": [
+        "현충사",
+        "이순신 유적지",
+        "온양온천",
+        "외암민속마을",
+        "맹씨행단"
+      ],
+      "createdTime": "2025-06-01T02:00:00.000Z"
     },
     {
-      "id": "course-002",
-      "title": "경남 통영 2박3일",
-      "duration": "2박3일", 
-      "description": "한산대첩의 현장 통영에서 이순신의 발자취 탐방",
-      "destinations": ["통영 이순신공원", "한산도", "미륵산", "동피랑마을"],
-      "transportation": "고속버스 터미널 이용",
-      "budget": "25만원",
-      "difficulty": "보통",
-      "season": "봄, 가을",
-      "highlights": "한산대첩 역사탐방, 통영 8경 관광",
-      "createdTime": "2025-05-29T00:00:00.000Z"
+      "id": "course-2day-tongyeong",
+      "title": "통영 이순신 흔적 2박3일",
+      "duration": "2박3일",
+      "departure": "부산/경남 지역",
+      "return": "부산/경남 지역",
+      "day1": "통영 도착 → 이순신공원 → 동피랑벽화마을",
+      "day2": "한산도 → 제승당 → 거제도 이동",
+      "day3": "거제 옥포대첩 기념공원 → 귀가",
+      "includedPlaces": [
+        "통영 이순신공원",
+        "한산도",
+        "제승당",
+        "거제 옥포대첩 기념공원",
+        "동피랑벽화마을"
+      ],
+      "createdTime": "2025-06-01T02:00:00.000Z"
+    },
+    {
+      "id": "course-2day-jeonnam",
+      "title": "전남 명량 대첩 2박3일",
+      "duration": "2박3일",
+      "departure": "광주/호남 지역",
+      "return": "광주/호남 지역",
+      "day1": "여수 거북선 전시관 → 여수 밤바다",
+      "day2": "진도 명량대첩 기념공원 → 울돌목 → 진도대교",
+      "day3": "남해 노량해전 공원 → 귀가",
+      "includedPlaces": [
+        "여수 거북선 전시관",
+        "진도 명량대첩 기념공원",
+        "남해 노량해전 공원",
+        "울돌목"
+      ],
+      "createdTime": "2025-06-01T02:00:00.000Z"
     }
   ],
-  "lastUpdated": "2025-05-29T12:00:00.000Z",
-  "count": 2
+  "lastUpdated": "2025-06-01T02:00:34.425Z",
+  "count": 3
 }
