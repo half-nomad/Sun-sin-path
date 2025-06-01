@@ -8,11 +8,11 @@ class TimelinePage {
         try {
             // DataLoader 대기
             let retryCount = 0;
-            while ((!window.SunsinLoader || !window.DataLoader) && retryCount < 50) {
+            while (!window.SunsinsPathDataLoader && retryCount < 50) {
                 await new Promise(resolve => setTimeout(resolve, 100));
                 retryCount++;
             }
-            this.timeline = await DataLoader.loadTimeline();
+            this.timeline = await window.SunsinsPathDataLoader.getTimeline();
             console.log(`✅ 연표 데이터 ${this.timeline.length}개 로드`);
             this.renderTimeline();
         } catch (error) {
