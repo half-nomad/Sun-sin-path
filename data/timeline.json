@@ -1,0 +1,62 @@
+{
+  "data": [
+    {
+      "date": "1545년",
+      "title": "이순신 출생",
+      "description": "충무공 이순신이 한성(현 서울) 건천동에서 태어났습니다. 본관은 덕수 이씨입니다.",
+      "location": "한성 건천동",
+      "importance": "높음",
+      "category": "생애"
+    },
+    {
+      "date": "1576년",
+      "title": "무과 급제",
+      "description": "32세의 나이로 무과에 급제하여 관직에 나아갔습니다.",
+      "location": "한성",
+      "importance": "보통",
+      "category": "생애"
+    },
+    {
+      "date": "1591년",
+      "title": "전라좌도 수군절도사 임명",
+      "description": "임진왜란을 앞두고 전라좌도 수군절도사로 임명되어 조선 수군을 지휘하게 되었습니다.",
+      "location": "전라좌수영",
+      "importance": "높음",
+      "category": "관직"
+    },
+    {
+      "date": "1592년 5월",
+      "title": "옥포대첩 승리",
+      "description": "임진왜란 첫 승리를 거둔 옥포대첩에서 왜선 26척을 격파했습니다.",
+      "location": "경남 거제 옥포",
+      "importance": "높음",
+      "category": "전투"
+    },
+    {
+      "date": "1592년 7월",
+      "title": "한산도대첩 승리",
+      "description": "학익진 전법으로 왜선 59척을 격파한 조선 해전사의 최대 승리입니다.",
+      "location": "경남 통영 한산도",
+      "importance": "최고",
+      "category": "전투"
+    },
+    {
+      "date": "1597년",
+      "title": "명량대첩 승리",
+      "description": "단 12척의 조선 함선으로 왜선 130여 척을 무찌른 기적적인 승리를 거두었습니다.",
+      "location": "전남 진도 명량",
+      "importance": "최고",
+      "category": "전투"
+    },
+    {
+      "date": "1598년 12월",
+      "title": "노량해전에서 전사",
+      "description": "정유재란의 마지막 전투인 노량해전에서 적탄에 맞아 장렬히 전사했습니다.",
+      "location": "경남 남해 노량",
+      "importance": "최고",
+      "category": "전사"
+    }
+  ],
+  "count": 7,
+  "lastUpdate": "2025-06-01T12:00:00Z"
+}

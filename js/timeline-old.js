@@ -1,10 +1,9 @@
-// 타임라인 페이지 - 2025-06-01 수정본
+// 타임라인 페이지
 class TimelinePage {
     constructor() {
         this.timeline = [];
         this.init();
     }
-    
     async init() {
         try {
             // DataLoader 대기
@@ -13,7 +12,6 @@ class TimelinePage {
                 await new Promise(resolve => setTimeout(resolve, 100));
                 retryCount++;
             }
-            
             this.timeline = await window.sunsinData.getTimeline();
             console.log(`✅ 연표 데이터 ${this.timeline.length}개 로드`);
             this.renderTimeline();
@@ -21,7 +19,6 @@ class TimelinePage {
             console.error('❌ 초기화 실패:', error);
         }
     }
-    
     renderTimeline() {
         const container = document.getElementById('timeline-container');
         if (!container) {
@@ -51,7 +48,6 @@ class TimelinePage {
         console.log(`✅ 타임라인 렌더링 완료: ${this.timeline.length}개 아이템`);
     }
 }
-
 // 페이지 로드 시 초기화
 document.addEventListener('DOMContentLoaded', () => {
     if (window.sunsinData) {
@@ -60,6 +56,4 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => window.timelinePage = new TimelinePage(), 500);
     }
 });
-
 console.log('✅ timeline.js 로드 완료');
-console.log('✅ 카드 클릭 기능 활성화');

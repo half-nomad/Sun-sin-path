@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "lastUpdate": "2025-06-01T12:00:00Z",
+  "updateReason": "Initial data setup",
+  "dataStatus": {
+    "timeline": 7,
+    "destinations": 3,
+    "courses": 2
+  },
+  "website": {
+    "title": "순신의 길",
+    "description": "충무공 이순신의 역사와 관련 여행지를 소개하는 인터랙티브 웹사이트",
+    "author": "Claude & User",
+    "contact": "github.com/half-nomad/Sun-sin-path"
+  }
+}

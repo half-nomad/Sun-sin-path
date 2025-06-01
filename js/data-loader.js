@@ -3,11 +3,18 @@
 
 class SunsinDataLoader {
     constructor() {
-        this.baseUrl = './assets/data/';
+        // 현재 경로에 따라 baseUrl 동적 설정
+        const currentPath = window.location.pathname;
+        if (currentPath.includes('/pages/')) {
+            this.baseUrl = '../data/';
+        } else {
+            this.baseUrl = './data/';
+        }
+        
         this.cache = new Map();
         this.cacheTTL = 5 * 60 * 1000; // 5분 캐시
         
-        console.log('🚀 순신의 길 데이터 로더 초기화 완료');
+        console.log(`🚀 순신의 길 데이터 로더 초기화 완료 (경로: ${this.baseUrl})`);
     }
 
     // JSON 파일 로드 (캐시 포함)

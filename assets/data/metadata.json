@@ -1,11 +1,16 @@
 {
-  "lastUpdate": "2025-06-01T00:50:13.001Z",
-  "updateReason": "수동 실행",
+  "lastUpdate": "2025-06-01T10:54:00.000Z",
+  "updateReason": "최종 실제 데이터 구조로 업데이트",
   "updateType": "all",
   "databases": {
     "travelCourses": "20109131-4f8f-80a1-b28d-cc04552f870f",
-    "timeline": "20109131-4f8f-80a3-908b-e834651bd807",
+    "timeline": "20109131-4f8f-80a3-908b-e834651bd807", 
     "destinations": "20109131-4f8f-803a-a27f-ecf11768b3a4"
   },
-  "version": "1.0.0"
+  "version": "2.0.0",
+  "dataStructure": {
+    "timeline": "충무공 이순신의 주요 생애 사건 8개",
+    "destinations": "이순신 관련 주요 여행지 6개", 
+    "courses": "추천 여행 코스 3개"
+  }
 }
