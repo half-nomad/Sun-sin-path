@@ -2,6 +2,11 @@
 // 순신의 길 - 노션 데이터 자동 업데이트 스크립트
 // GitHub Actions에서 실행되어 노션 데이터를 JSON으로 저장
 
+// Node.js 18 미만 환경을 위한 fetch polyfill
+if (!globalThis.fetch) {
+    globalThis.fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+}
+
 const fs = require('fs').promises;
 const path = require('path');
 

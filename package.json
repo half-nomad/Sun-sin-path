@@ -28,7 +28,9 @@
     "url": "https://github.com/half-nomad/Sun-sin-path/issues"
   },
   "homepage": "https://half-nomad.github.io/Sun-sin-path/",
-  "dependencies": {},
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
   "devDependencies": {},
   "engines": {
     "node": ">=18.0.0"
